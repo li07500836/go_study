@@ -40,7 +40,6 @@ func main() {
 	fmt.Printf("最小值： %d\n", min)
 }
 
-//計算最小值fun
 func minResult(z []int) int {
 	//預設最小值為陣列第一位
 	min := int(z[0])

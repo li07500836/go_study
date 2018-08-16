@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 	"strconv"
+
 	"./valuechangepackage"
 )
 
-func main()  {
+func main() {
 	var a int = 1
 	var b int32 = 2
 	var c int64 = 3
@@ -16,24 +17,24 @@ func main()  {
 	var x string = "I Love Golang_"
 
 	//a+b (int)
-	z := a+int(b)
-	fmt.Printf("a+b = %d\n",z)
+	z := a + int(b)
+	fmt.Printf("a+b = %d\n", z)
 
 	//a+b+c (int)
-	fmt.Printf("a+b+c = %d\n",a+int(b)+int(c))
+	fmt.Printf("a+b+c = %d\n", a+int(b)+int(c))
 
 	//f/e (float)
-	fmt.Printf("f/e = %f\n",float32(f)/e)
+	fmt.Printf("f/e = %f\n", float32(f)/e)
 
 	//a+d (int)
-	fmt.Printf("a+d = %d\n",a+strToInt(d))
+	fmt.Printf("a+d = %d\n", a+strToInt(d))
 
 	//x+a (string)
-	fmt.Printf("x+a = %s\n",x+valuechangepackage.IntToString(a))
+	fmt.Printf("x+a = %s\n", x+valuechangepackage.IntToString(a))
 }
 
 func strToInt(str string) int {
-	value,_ := strconv.Atoi(str)
+	value, _ := strconv.Atoi(str)
 
 	return value
 }

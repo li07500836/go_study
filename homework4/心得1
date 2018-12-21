@@ -23,7 +23,7 @@
 		- goto
 6.array與slice
 	a.array作切片放置另一個參數s的時後,是產生一個新的位址放置,當s的直有改變的時候,原始的slice的直不會跟著改變
-	b.slice作切片放置另一個參數s的時後,是使用參照,當s的直有改變的時候,原始的slice的直也會跟著改變
+	b.slice作切片放置另一個參數s的時後,是使用參照(指標),當s的直有改變的時候,原始的slice的直也會跟著改變
 	c.slice如果要取直放到另一個參數不影響原有資料,可以使用copy語法產生s,當s改變時就不影響原有slice
 7.map
 	a.為key & value的結構
@@ -32,3 +32,17 @@
 	a.可以在func宣告的時候,就指定回傳值的參數
 	b.go 的宣告傳入&傳出的參數都需要明確的宣告型態
 	c.允許多參數回傳 func Info() (age int, name string)
+9.Golang struct & pointer
+    a.pointer
+        - 指標就是紀錄記憶體的位置，不是值接存值
+        - 使用&與*去處理傳接值
+    b.struct & func
+        - 對應 class 類似繼承的概念
+        - 使用方式：原本 func Name 之前加入，這個 func 要參照到哪 func (m *Member) GetAge() int {
+10.Golang Interface
+    a.泛用型別 - interface{} 如果在後面加上兩個大括號
+        - 面對一個型別不是太穩定的 api 需求，才會使用這種型別設計
+    b.類似傳統 OOP 的interface
+        - 只要有實作該 interface 所規範的 func ，即可定義它有實作
+        - 接外部 package 時非常好用，我可以無痛用我的 struct ，丟到別人定義的 api 裡
+11.Golang goroutine
